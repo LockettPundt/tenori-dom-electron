@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+/* eslint-disable react/jsx-filename-extension */
+import React, { useReducer } from 'react';
+import { StateProvider } from './context';
 import './App.css';
 
-function App() {
+const App = () => {
+  const initialState = {
+    e1: {
+      on: false,
+    },
+  };
+
+
+  const reducer = (state, action) => {
+    const { on, id } = action;
+    switch (action.type) {
+      case 'ACTION_TURN_OFF':
+        return {
+          [id]: {
+            ...state,
+            on,
+          },
+        };
+      default:
+        return state;
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StateProvider value={useReducer(reducer, initialState)}>
+        tenori-dom here we go!
+      </StateProvider>
     </div>
   );
-}
+};
 
 export default App;
