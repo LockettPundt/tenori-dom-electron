@@ -1,7 +1,8 @@
+/* eslint-disable no-loop-func */
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 import StateContext from '../context';
-
 
 const ButtonOn = styled.button`
   background-color: green;
@@ -19,10 +20,8 @@ const TestComponent = (props) => {
 
   const { id, freq } = props;
   const [status, setStatus] = useState(value[id].status);
-  // const [selected, setSelected] = useState(false);
-
-  // console.log('this is the value from test component.', value[id].status);
-  // console.log('this is the status in a state hook', status);
+  const [currentStep, setCurrentStep] = useState(1);
+  const timer = () => (currentStep === 7 ? currentStep(1) : setCurrentStep(currentStep + 1));
 
 
   const clickHandler = (e) => {
@@ -36,14 +35,29 @@ const TestComponent = (props) => {
     });
     const audioContext = new AudioContext();
     const now = audioContext.currentTime;
+
     const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+
+    // const reverb = async () => {
+    //   const convolver = audioContext.createConvolver();
+    //   const osc = audioContext.createOscillator();
+    //   osc.frequency.value = freq;
+    //   convolver.buffer = audioContext.decodeAudioData(osc);
+    //   return convolver;
+    // };
+
+    // const verb = reverb();
+    oscillator.connect(gainNode);
     oscillator.type = 'triangle';
     oscillator.frequency.value = freq;
-    oscillator.connect(audioContext.destination);
-    oscillator.connect(audioContext.destination);
+    // oscillator.connect(verb);
+    gainNode.connect(audioContext.destination);
     if (!status) {
       oscillator.start();
-      oscillator.stop(now + 1);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, now + 4);
+      oscillator.stop(now + 5);
     }
     console.log(value);
   };
