@@ -27,7 +27,7 @@ const TestComponent = (props) => {
     'square',
     'sawtooth',
   ];
-
+  console.log('the current waave is: ', waves[value.wave]);
   useEffect(() => {
     // console.log('the current step is', value.currentStep, 'the component step is: ', step);
 
