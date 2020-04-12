@@ -6,13 +6,24 @@ import TestComponent from './components/TestComponent';
 import initialState from './InitialState';
 import TestTimer from './components/TestTimer';
 import OctaveControls from './components/OctaveControls';
+import WaveControls from './components/WaveControls';
 
 const App = () => {
   const reducer = (state, action) => {
     const {
-      status, id, play, currentStep, octave,
+      status, id, play, currentStep, octave, wave,
     } = action;
     switch (action.type) {
+      case 'ACTION_WAVE_NEXT':
+        return {
+          ...state,
+          wave,
+        };
+      case 'ACTION_WAVE_PREVIOUS':
+        return {
+          ...state,
+          wave,
+        };
       case 'ACTION_OCTAVE_DOWN':
         return {
           ...state,
@@ -67,7 +78,7 @@ const App = () => {
           <TestComponent id="b2" freq={123.47} step={7} />
         </div>
         <OctaveControls />
-
+        <WaveControls />
       </StateProvider>
     </div>
   );
