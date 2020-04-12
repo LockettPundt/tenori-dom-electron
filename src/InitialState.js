@@ -2,6 +2,8 @@ const initialState = {
   reverb: true,
   play: false,
   currentStep: 1,
+  speed: 0.6,
+  release: 1.5,
   c2: {
     status: false,
     paused: true,
