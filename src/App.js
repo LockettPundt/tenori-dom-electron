@@ -5,7 +5,7 @@ import './App.css';
 import TestComponent from './components/TestComponent';
 import initialState from './InitialState';
 import TestTimer from './components/TestTimer';
-
+import Controls from './components/Controls';
 
 const App = () => {
   const reducer = (state, action) => {
@@ -13,6 +13,12 @@ const App = () => {
       status, id, play, currentStep,
     } = action;
     switch (action.type) {
+      case 'ACTION_STOP':
+        return {
+          ...state,
+          currentStep,
+          play,
+        };
       case 'ACTION_CHANGE_STEP':
         return {
           ...state,
@@ -50,6 +56,7 @@ const App = () => {
           <TestComponent id="a2" freq={110.00} step={6} />
           <TestComponent id="b2" freq={123.47} step={7} />
         </div>
+        <Controls />
 
       </StateProvider>
     </div>
