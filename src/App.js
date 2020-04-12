@@ -35,29 +35,22 @@ const App = () => {
     }
   };
 
+
   return (
     <div className="App">
       <StateProvider value={useReducer(reducer, initialState)}>
         tenori-dom here we go!
         <TestTimer />
         <div>
-          <TestComponent id="c2" freq={65.41} />
-          <TestComponent id="d2" freq={73.42} />
-          <TestComponent id="e2" freq={82.41} />
-          <TestComponent id="f2" freq={87.31} />
-          <TestComponent id="g2" freq={98.00} />
-          <TestComponent id="a2" freq={110.00} />
-          <TestComponent id="b2" freq={123.47} />
+          <TestComponent id="c2" freq={65.41} step={1} />
+          <TestComponent id="d2" freq={73.42} step={2} />
+          <TestComponent id="e2" freq={82.41} step={3} />
+          <TestComponent id="f2" freq={87.31} step={4} />
+          <TestComponent id="g2" freq={98.00} step={5} />
+          <TestComponent id="a2" freq={110.00} step={6} />
+          <TestComponent id="b2" freq={123.47} step={7} />
         </div>
-        <div>
-          <TestComponent id="c3" freq={130.81} />
-          <TestComponent id="d3" freq={146.83} />
-          <TestComponent id="e3" freq={164.81} />
-          <TestComponent id="f3" freq={174.61} />
-          <TestComponent id="g3" freq={196.00} />
-          <TestComponent id="a3" freq={220.00} />
-          <TestComponent id="b3" freq={246.94} />
-        </div>
+
       </StateProvider>
     </div>
   );
