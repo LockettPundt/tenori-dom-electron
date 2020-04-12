@@ -1,9 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import StateContext from '../context';
 
 const TestTimer = () => {
   const [value, dispatch] = useContext(StateContext);
-  // const [step, setStep] = useState(value.currentStep);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -13,21 +13,21 @@ const TestTimer = () => {
           currentStep: value.currentStep === 7 ? value.currentStep -= 6 : value.currentStep += 1,
         });
       }
-      console.log('step is:', value.currentStep);
-    }, 1000);
+      // console.log('step is:', value.currentStep);
+    }, value.speed * 1000);
     return () => clearInterval(timer);
   }, [value.play]);
 
 
-  console.log('the step below the useEffect is:', value.currentStep);
+  // console.log('the step below the useEffect is:', value.currentStep);
   const clickHandler = (e) => {
     e.preventDefault();
-    console.log('Clicked Play', !value.play);
+    // console.log('Clicked Play', !value.play);
     dispatch({
       type: 'ACTION_TOGGLE_PLAY',
       play: !value.play,
     });
-    console.log('Clicked Play', !value.play);
+    // console.log('Clicked Play', !value.play);
   };
 
   return (
