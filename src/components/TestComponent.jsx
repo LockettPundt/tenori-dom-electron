@@ -15,25 +15,29 @@ const ButtonOff = styled.button`
   color: white;
 `;
 
-
 const TestComponent = (props) => {
   const [value, dispatch] = useContext(StateContext);
   // console.log(props);
   const { id, freq, step } = props;
   const [status, setStatus] = useState(value[id].status);
   // const [currentStep, setCurrentStep] = useState(value.currentStep);
-
+  const waves = [
+    'triangle',
+    'sine',
+    'square',
+    'sawtooth',
+  ];
 
   useEffect(() => {
-    console.log('the current step is', value.currentStep, 'the component step is: ', step);
+    // console.log('the current step is', value.currentStep, 'the component step is: ', step);
 
     if (status && step === value.currentStep && value.play) {
       const audioContext = new AudioContext();
       const now = audioContext.currentTime;
 
       const oscillator = audioContext.createOscillator();
-      oscillator.type = 'triangle';
-      oscillator.frequency.value = freq;
+      oscillator.type = waves[value.wave];
+      oscillator.frequency.value = freq * value.octave;
       const gainNode = audioContext.createGain();
 
       const compressor = audioContext.createDynamicsCompressor();
