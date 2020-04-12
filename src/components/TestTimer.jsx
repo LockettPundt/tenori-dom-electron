@@ -14,7 +14,7 @@ const TestTimer = () => {
         });
       }
       // console.log('step is:', value.currentStep);
-    }, value.speed * 1000);
+    }, value.tempo * 1000);
     return () => clearInterval(timer);
   }, [value.play]);
 
