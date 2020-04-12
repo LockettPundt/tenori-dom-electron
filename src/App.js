@@ -5,14 +5,24 @@ import './App.css';
 import TestComponent from './components/TestComponent';
 import initialState from './InitialState';
 import TestTimer from './components/TestTimer';
-import Controls from './components/Controls';
+import OctaveControls from './components/OctaveControls';
 
 const App = () => {
   const reducer = (state, action) => {
     const {
-      status, id, play, currentStep,
+      status, id, play, currentStep, octave,
     } = action;
     switch (action.type) {
+      case 'ACTION_OCTAVE_DOWN':
+        return {
+          ...state,
+          octave,
+        };
+      case 'ACTION_OCTAVE_UP':
+        return {
+          ...state,
+          octave,
+        };
       case 'ACTION_STOP':
         return {
           ...state,
@@ -56,7 +66,7 @@ const App = () => {
           <TestComponent id="a2" freq={110.00} step={6} />
           <TestComponent id="b2" freq={123.47} step={7} />
         </div>
-        <Controls />
+        <OctaveControls />
 
       </StateProvider>
     </div>
