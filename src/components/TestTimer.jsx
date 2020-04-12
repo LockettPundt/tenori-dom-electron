@@ -20,7 +20,7 @@ const TestTimer = () => {
 
 
   // console.log('the step below the useEffect is:', value.currentStep);
-  const clickHandler = (e) => {
+  const playHandler = (e) => {
     e.preventDefault();
     // console.log('Clicked Play', !value.play);
     dispatch({
@@ -30,6 +30,15 @@ const TestTimer = () => {
     // console.log('Clicked Play', !value.play);
   };
 
+  const stop = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: 'ACTION_STOP',
+      currentStep: 1,
+      play: !value.play,
+    });
+  };
+
   return (
     <>
       <p>
@@ -37,7 +46,8 @@ const TestTimer = () => {
         {' '}
         {value.currentStep}
       </p>
-      <button type="submit" onClick={(e) => clickHandler(e)}>{value.play ? 'Stop' : 'Play'}</button>
+      <button type="submit" onClick={(e) => playHandler(e)}>{value.play ? 'Pause' : 'Play'}</button>
+      <button type="submit" onClick={(e) => stop(e)}>STOP</button>
     </>
   );
 };
