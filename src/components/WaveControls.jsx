@@ -13,13 +13,12 @@ const WaveControls = () => {
       wave: value.wave + num < 0 ? 0 : value.wave + num,
     });
   };
-  console.log('this si the wave:', value.wave);
   return (
-    <>
+    <div>
       <p>WAVESHAPE</p>
       <button type="submit" value="ACTION_WAVE_PREVIOUS" onClick={(e) => waveHandler(e, -1)}>prev wave</button>
       <button type="submit" value="ACTION_WAVE_NEXT" onClick={(e) => waveHandler(e, 1)}>next wave</button>
-    </>
+    </div>
   );
 };
 
