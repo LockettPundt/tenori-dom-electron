@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
@@ -19,8 +21,11 @@ const ButtonOff = styled.button`
 `;
 
 
-const SingleNote = ({ id, note, freq }) => {
+const SingleNote = ({
+  id, note, freq,
+}) => {
   const [value, dispatch] = useContext(StateContext);
+
   const waves = [
     'triangle',
     'sine',
@@ -29,13 +34,12 @@ const SingleNote = ({ id, note, freq }) => {
   ];
   const [status, setStatus] = useState(value[note][id].status);
   useEffect(() => {
-    const oscCreate = () => {
-      console.log('triggered');
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const now = audioContext.currentTime;
+    const oscPlay = async () => {
+      const audioContext = new AudioContext();
       const oscillator = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
       const compressor = audioContext.createDynamicsCompressor();
+      const now = audioContext.currentTime;
       oscillator.type = waves[value.wave];
       oscillator.frequency.value = freq * value.octave;
       compressor.threshold.setValueAtTime(-50, audioContext.currentTime);
@@ -43,20 +47,19 @@ const SingleNote = ({ id, note, freq }) => {
       compressor.ratio.setValueAtTime(12, audioContext.currentTime);
       compressor.attack.setValueAtTime(0, audioContext.currentTime);
       compressor.release.setValueAtTime(0.25, audioContext.currentTime);
-
-      // gainNode.gain.setValueAtTime(value.volume, now);
       gainNode.gain.exponentialRampToValueAtTime(0.00001, now + value.release);
-      // gainNode.gain.linearRampToValueAtTime(0, now - value.release);
-
       gainNode.gain.value = value.volume;
       oscillator.connect(gainNode)
         .connect(compressor)
         .connect(audioContext.destination);
       oscillator.start(now);
       oscillator.stop(now + value.release);
+      setTimeout(() => {
+        audioContext.close();
+      }, now + value.release * 1000);
     };
     if (status && (id === value.currentStep) && value.play) {
-      return oscCreate();
+      oscPlay();
     }
   }, [value.currentStep]);
 
