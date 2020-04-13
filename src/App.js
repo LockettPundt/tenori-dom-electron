@@ -7,13 +7,37 @@ import initialState from './InitialState';
 import TestTimer from './components/TestTimer';
 import OctaveControls from './components/OctaveControls';
 import WaveControls from './components/WaveControls';
+import TempoControl from './components/TempoControl';
+import VolumeControl from './components/VolumeControl';
+import ReleaseControl from './components/ReleaseControl';
+
 
 const App = () => {
   const reducer = (state, action) => {
     const {
-      status, id, play, currentStep, octave, wave,
+      status, id, play, currentStep, octave, wave, tempo, volume, release,
     } = action;
     switch (action.type) {
+      case 'ACTION_CHANGE_RELEASE':
+        return {
+          ...state,
+          release,
+        };
+      case 'ACTION_CHANGE_VOLUME':
+        return {
+          ...state,
+          volume,
+        };
+      case 'ACTION_TEMPO_DOWN':
+        return {
+          ...state,
+          tempo,
+        };
+      case 'ACTION_TEMPO_UP':
+        return {
+          ...state,
+          tempo,
+        };
       case 'ACTION_WAVE_NEXT':
         return {
           ...state,
@@ -79,6 +103,9 @@ const App = () => {
         </div>
         <OctaveControls />
         <WaveControls />
+        <TempoControl />
+        <VolumeControl />
+        <ReleaseControl />
       </StateProvider>
     </div>
   );
