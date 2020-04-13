@@ -12,7 +12,6 @@ const TempoControl = () => {
       tempo: value.tempo + num <= 0 ? 0.1 : value.tempo + num,
     });
   };
-  console.log('current tempo is: ', value.tempo);
   return (
     <div>
       <p>TEMPO</p>
