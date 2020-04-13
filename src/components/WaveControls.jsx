@@ -16,8 +16,8 @@ const WaveControls = () => {
   return (
     <div>
       <p>WAVESHAPE</p>
-      <button type="submit" value="ACTION_WAVE_PREVIOUS" onClick={(e) => waveHandler(e, -1)}>prev wave</button>
-      <button type="submit" value="ACTION_WAVE_NEXT" onClick={(e) => waveHandler(e, 1)}>next wave</button>
+      <button type="submit" value="ACTION_WAVE_PREVIOUS" onClick={(e) => waveHandler(e, -1)}>-</button>
+      <button type="submit" value="ACTION_WAVE_NEXT" onClick={(e) => waveHandler(e, 1)}>+</button>
     </div>
   );
 };
