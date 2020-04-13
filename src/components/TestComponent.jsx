@@ -43,13 +43,15 @@ const TestComponent = (props) => {
       compressor.ratio.setValueAtTime(12, audioContext.currentTime);
       compressor.attack.setValueAtTime(0, audioContext.currentTime);
       compressor.release.setValueAtTime(0.25, audioContext.currentTime);
-      oscillator.connect(gainNode);
+
       // gainNode.gain.setValueAtTime(value.volume, now);
       gainNode.gain.exponentialRampToValueAtTime(0.00001, now + value.release);
       // gainNode.gain.linearRampToValueAtTime(0, now - value.release);
-      gainNode.connect(compressor);
+
       gainNode.gain.value = value.volume;
-      compressor.connect(audioContext.destination);
+      oscillator.connect(gainNode)
+        .connect(compressor)
+        .connect(audioContext.destination);
       oscillator.start();
       oscillator.stop(now + value.release + 0.1);
     }
@@ -58,7 +60,6 @@ const TestComponent = (props) => {
   const clickHandler = (e) => {
     e.preventDefault();
     setStatus(!status);
-    // console.log('passing the dispatch this value: ', !status);
     dispatch({
       type: 'ACTION_TOGGLE_NOTE',
       status,
