@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import React, { useContext, useState, useEffect } from 'react';
+import React from 'react';
 import SingleNote from './SingleNote';
-import StateContext from '../context';
+
 
 const NoteRow = (props) => {
   const {
