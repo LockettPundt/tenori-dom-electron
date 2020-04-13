@@ -17,8 +17,8 @@ const OctaveControls = () => {
     <>
       <p>OCTAVE</p>
       <div>
-        <button type="submit" value="ACTION_OCTAVE_UP" onClick={(e) => octaveHandler(e, 1)}>octave UP</button>
         <button type="submit" value="ACTION_OCTAVE_DOWN" onClick={(e) => octaveHandler(e, -1)}>octave DOWN</button>
+        <button type="submit" value="ACTION_OCTAVE_UP" onClick={(e) => octaveHandler(e, 1)}>octave UP</button>
       </div>
 
     </>
