@@ -4,13 +4,13 @@ import { StateProvider } from './context';
 import './App.css';
 import TestComponent from './components/TestComponent';
 import initialState from './InitialState';
-import TestTimer from './components/TestTimer';
+import PlayControl from './components/PlayControl';
 import OctaveControls from './components/OctaveControls';
 import WaveControls from './components/WaveControls';
 import TempoControl from './components/TempoControl';
 import VolumeControl from './components/VolumeControl';
 import ReleaseControl from './components/ReleaseControl';
-
+import Timer from './components/Timer';
 
 const App = () => {
   const reducer = (state, action) => {
@@ -91,7 +91,8 @@ const App = () => {
     <div className="App">
       <StateProvider value={useReducer(reducer, initialState)}>
         tenori-dom here we go!
-        <TestTimer />
+        <Timer />
+        <PlayControl />
         <div>
           <TestComponent id="c2" freq={65.41} step={1} />
           <TestComponent id="d2" freq={73.42} step={2} />
