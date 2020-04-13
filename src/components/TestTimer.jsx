@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import StateContext from '../context';
 
 const TestTimer = () => {
   const [value, dispatch] = useContext(StateContext);
-
+  const [tempo, setTempo] = useState(value.tempo);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -16,7 +16,7 @@ const TestTimer = () => {
       // console.log('step is:', value.currentStep);
     }, value.tempo * 1000);
     return () => clearInterval(timer);
-  }, [value.play]);
+  }, [value.play, value.tempo]);
 
 
   // console.log('the step below the useEffect is:', value.currentStep);
