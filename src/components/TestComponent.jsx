@@ -20,35 +20,38 @@ const TestComponent = (props) => {
   // console.log(props);
   const { id, freq, step } = props;
   const [status, setStatus] = useState(value[id].status);
-  // const [currentStep, setCurrentStep] = useState(value.currentStep);
+
   const waves = [
     'triangle',
     'sine',
     'square',
     'sawtooth',
   ];
-  console.log('the current waave is: ', waves[value.wave]);
+
+
   useEffect(() => {
-    // console.log('the current step is', value.currentStep, 'the component step is: ', step);
-
     if (status && step === value.currentStep && value.play) {
-      const audioContext = new AudioContext();
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
       const now = audioContext.currentTime;
-
       const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      const compressor = audioContext.createDynamicsCompressor();
       oscillator.type = waves[value.wave];
       oscillator.frequency.value = freq * value.octave;
-      const gainNode = audioContext.createGain();
-
-      const compressor = audioContext.createDynamicsCompressor();
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, now + value.release);
-
+      compressor.threshold.setValueAtTime(-50, audioContext.currentTime);
+      compressor.knee.setValueAtTime(40, audioContext.currentTime);
+      compressor.ratio.setValueAtTime(12, audioContext.currentTime);
+      compressor.attack.setValueAtTime(0, audioContext.currentTime);
+      compressor.release.setValueAtTime(0.25, audioContext.currentTime);
       oscillator.connect(gainNode);
+      // gainNode.gain.setValueAtTime(value.volume, now);
+      gainNode.gain.exponentialRampToValueAtTime(0.00001, now + value.release);
+      // gainNode.gain.linearRampToValueAtTime(0, now - value.release);
       gainNode.connect(compressor);
-      console.log('triggered');
-      oscillator.start();
+      gainNode.gain.value = value.volume;
       compressor.connect(audioContext.destination);
-      oscillator.stop(now + value.release);
+      oscillator.start();
+      oscillator.stop(now + value.release + 0.1);
     }
   }, [value.currentStep]);
 
@@ -70,10 +73,10 @@ const TestComponent = (props) => {
     </ButtonOff>
   );
 
-  const toggle = status ? on : off;
+  const button = status ? on : off;
   return (
     <>
-      {toggle}
+      {button}
     </>
   );
 };
