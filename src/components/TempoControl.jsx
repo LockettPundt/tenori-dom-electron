@@ -15,8 +15,8 @@ const TempoControl = () => {
   return (
     <div>
       <p>TEMPO</p>
-      <button type="submit" value="ACTION_TEMPO_DOWN" onClick={(e) => tempoHandler(e, 0.1)}>DOWN</button>
-      <button type="submit" value="ACTION_TEMPO_UP" onClick={(e) => tempoHandler(e, -0.1)}>UP</button>
+      <button type="submit" value="ACTION_TEMPO_DOWN" onClick={(e) => tempoHandler(e, 0.1)}>-</button>
+      <button type="submit" value="ACTION_TEMPO_UP" onClick={(e) => tempoHandler(e, -0.1)}>+</button>
     </div>
   );
 };

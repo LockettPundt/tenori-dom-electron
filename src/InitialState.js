@@ -8,47 +8,808 @@ const initialState = {
   volume: 0.3,
   wave: 0,
   c2: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   d2: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   e2: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   f2: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   g2: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   a2: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
-  b2: {
-    status: false,
+  b2:
+  {
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   c3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   d3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   e3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   f3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   g3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   a3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
   b3: {
-    status: false,
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
   },
+  c4: {
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
+  },
+  d4: {
+    1: {
+      status: false,
+    },
+    2: {
+      status: false,
+    },
+    3: {
+      status: false,
+    },
+    4: {
+      status: false,
+    },
+    5: {
+      status: false,
+    },
+    6: {
+      status: false,
+    },
+    7: {
+      status: false,
+    },
+    8: {
+      status: false,
+    },
+    9: {
+      status: false,
+    },
+    10: {
+      status: false,
+    },
+    11: {
+      status: false,
+    },
+    12: {
+      status: false,
+    },
+    13: {
+      status: false,
+    },
+    14: {
+      status: false,
+    },
+    15: {
+      status: false,
+    },
+    16: {
+      status: false,
+    },
+  },
+
+
 };
 
 export default initialState;

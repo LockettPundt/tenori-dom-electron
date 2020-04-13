@@ -13,7 +13,7 @@ const Timer = () => {
       if (value.play) {
         dispatch({
           type: 'ACTION_CHANGE_STEP',
-          currentStep: value.currentStep === 7 ? value.currentStep -= 6 : value.currentStep += 1,
+          currentStep: value.currentStep === 16 ? value.currentStep -= 15 : value.currentStep += 1,
         });
       }
     }, tempo * 1000);

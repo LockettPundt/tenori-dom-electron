@@ -1,36 +1,36 @@
-/* eslint-disable no-loop-func */
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
-
 import StateContext from '../context';
 
 
 const ButtonOn = styled.button`
   background-color: green;
+  width: 20px;
+  height: 20px;
   color: white;
 `;
 
 const ButtonOff = styled.button`
   background-color: red;
+  width: 20px;
+  height: 20px;
   color: white;
 `;
 
-const TestComponent = (props) => {
-  const [value, dispatch] = useContext(StateContext);
-  // console.log(props);
-  const { id, freq, step } = props;
-  const [status, setStatus] = useState(value[id].status);
 
+const SingleNote = ({ id, note, freq }) => {
+  const [value, dispatch] = useContext(StateContext);
   const waves = [
     'triangle',
     'sine',
     'square',
     'sawtooth',
   ];
-
-
+  const [status, setStatus] = useState(value[note][id].status);
   useEffect(() => {
-    if (status && step === value.currentStep && value.play) {
+    const oscCreate = () => {
+      console.log('triggered');
       const audioContext = new (window.AudioContext || window.webkitAudioContext)();
       const now = audioContext.currentTime;
       const oscillator = audioContext.createOscillator();
@@ -52,10 +52,14 @@ const TestComponent = (props) => {
       oscillator.connect(gainNode)
         .connect(compressor)
         .connect(audioContext.destination);
-      oscillator.start();
-      oscillator.stop(now + value.release + 0.1);
+      oscillator.start(now);
+      oscillator.stop(now + value.release);
+    };
+    if (status && (id === value.currentStep) && value.play) {
+      return oscCreate();
     }
   }, [value.currentStep]);
+
 
   const clickHandler = (e) => {
     e.preventDefault();
@@ -63,24 +67,22 @@ const TestComponent = (props) => {
     dispatch({
       type: 'ACTION_TOGGLE_NOTE',
       status,
-      id,
     });
   };
-  const on = <ButtonOn type="submit" value="on" onClick={(e) => clickHandler(e)}>ON</ButtonOn>;
+  const on = <ButtonOn type="submit" value="on" onClick={(e) => clickHandler(e)} />;
 
   const off = (
-    <ButtonOff type="submit" value="off" onClick={(e) => clickHandler(e)}>
-      OFF
-    </ButtonOff>
+    <ButtonOff type="submit" value="off" onClick={(e) => clickHandler(e)} />
   );
 
   const button = status ? on : off;
+
   return (
     <>
-      {button}
+      { button }
     </>
   );
 };
 
 
-export default TestComponent;
+export default SingleNote;

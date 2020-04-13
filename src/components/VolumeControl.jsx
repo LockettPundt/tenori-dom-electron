@@ -15,8 +15,8 @@ const VolumeControl = () => {
   return (
     <div>
       <p>VOLUME</p>
-      <button type="submit" onClick={(e) => volumeHandler(e, -0.1)}>DOWN</button>
-      <button type="submit" onClick={(e) => volumeHandler(e, 0.1)}>UP</button>
+      <button type="submit" onClick={(e) => volumeHandler(e, -0.1)}>-</button>
+      <button type="submit" onClick={(e) => volumeHandler(e, 0.1)}>+</button>
     </div>
   );
 };
