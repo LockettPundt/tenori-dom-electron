@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import StateContext from '../context';
+import { ControlButton, cIon, Icon } from '../styles/Buttons';
+import { ControlDiv } from '../styles/ControlDivs';
 
 const ReleaseControl = () => {
   const [value, dispatch] = useContext(StateContext);
@@ -13,11 +15,11 @@ const ReleaseControl = () => {
   };
 
   return (
-    <div>
-      <p>RELEASE</p>
-      <button type="submit" onClick={(e) => releaseHandler(e, -0.1)}>-</button>
-      <button type="submit" onClick={(e) => releaseHandler(e, 0.1)}>+</button>
-    </div>
+    <ControlDiv>
+      <ControlButton type="submit" onClick={(e) => releaseHandler(e, -0.1)}><i className="fas fa-minus" /></ControlButton>
+      <Icon className="fas fa-ruler" />
+      <ControlButton type="submit" onClick={(e) => releaseHandler(e, 0.1)}><i className="fas fa-plus" /></ControlButton>
+    </ControlDiv>
   );
 };
 

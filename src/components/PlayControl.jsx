@@ -1,5 +1,9 @@
 import React, { useContext } from 'react';
 import StateContext from '../context';
+import {
+  ControlButton, PlayIcon, StopIcon, PlayButton,
+} from '../styles/Buttons';
+import { ControlDiv } from '../styles/ControlDivs';
 
 const PlayControl = () => {
   const [value, dispatch] = useContext(StateContext);
@@ -22,10 +26,10 @@ const PlayControl = () => {
   };
 
   return (
-    <div>
-      <button type="submit" onClick={(e) => playHandler(e)}>{value.play ? 'Pause' : 'Play'}</button>
-      <button type="submit" onClick={(e) => stop(e)}>STOP</button>
-    </div>
+    <ControlDiv>
+      <PlayButton type="submit" onClick={(e) => playHandler(e)}>{value.play ? <PlayIcon className="fas fa-play" /> : <i className="fas fa-pause" />}</PlayButton>
+      <PlayButton type="submit" onClick={(e) => stop(e)}><StopIcon className="fas fa-stop" /></PlayButton>
+    </ControlDiv>
   );
 };
 

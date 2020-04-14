@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import StateContext from '../context';
+import { ControlButton, Icon } from '../styles/Buttons';
+import { ControlDiv } from '../styles/ControlDivs';
 
 const OctaveControls = () => {
   const [value, dispatch] = useContext(StateContext);
@@ -11,17 +13,17 @@ const OctaveControls = () => {
       octave: value.octave + num === 0 ? 1 : value.octave + num,
     });
   };
-  // console.log(value.octave);
 
   return (
-    <>
-      <p>OCTAVE</p>
-      <div>
-        <button type="submit" value="ACTION_OCTAVE_DOWN" onClick={(e) => octaveHandler(e, -1)}>-</button>
-        <button type="submit" value="ACTION_OCTAVE_UP" onClick={(e) => octaveHandler(e, 1)}>+</button>
-      </div>
+    <ControlDiv>
 
-    </>
+
+      <ControlButton type="submit" value="ACTION_OCTAVE_DOWN" onClick={(e) => octaveHandler(e, -1)}><i className="fas fa-minus" /></ControlButton>
+      <Icon className="fas fa-music" />
+      <ControlButton type="submit" value="ACTION_OCTAVE_UP" onClick={(e) => octaveHandler(e, 1)}><i className="fas fa-plus" /></ControlButton>
+
+
+    </ControlDiv>
   );
 };
 

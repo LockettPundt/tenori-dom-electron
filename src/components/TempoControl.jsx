@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import StateContext from '../context';
-
+import { ControlButton, Icon } from '../styles/Buttons';
+import { ControlDiv } from '../styles/ControlDivs';
 
 const TempoControl = () => {
   const [value, dispatch] = useContext(StateContext);
@@ -13,11 +14,12 @@ const TempoControl = () => {
     });
   };
   return (
-    <div>
-      <p>TEMPO</p>
-      <button type="submit" value="ACTION_TEMPO_DOWN" onClick={(e) => tempoHandler(e, 0.1)}>-</button>
-      <button type="submit" value="ACTION_TEMPO_UP" onClick={(e) => tempoHandler(e, -0.1)}>+</button>
-    </div>
+    <ControlDiv>
+
+      <ControlButton type="submit" value="ACTION_TEMPO_DOWN" onClick={(e) => tempoHandler(e, 0.1)}><i className="fas fa-minus" /></ControlButton>
+      <Icon className="far fa-clock" />
+      <ControlButton type="submit" value="ACTION_TEMPO_UP" onClick={(e) => tempoHandler(e, -0.1)}><i className="fas fa-plus" /></ControlButton>
+    </ControlDiv>
   );
 };
 
