@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import StateContext from '../context';
-
+import { Title } from '../styles/App';
 
 const Timer = () => {
   const [value, dispatch] = useContext(StateContext);
@@ -22,9 +22,9 @@ const Timer = () => {
 
 
   return (
-    <div>
-      <p>{value.currentStep}</p>
-    </div>
+    <>
+      <Title>{value.currentStep}</Title>
+    </>
   );
 };
 
