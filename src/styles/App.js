@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 
+export const TestDiv = styled.div`
+  background-color: green;
 
+`;
 export const AppWrap = styled.div`
-  width: 55%;
+  width: 60%;
   background-color: white;
   display: flex;
   flex-direction: column;
-  /* padding: 0.1rem 1rem 1rem 1rem;; */
-  height: 80%;
-  margin:  20px auto;
+  border-radius: 0.2rem;
+  padding: 0.1rem 1rem 1rem 1rem;;
+  height: auto;
+  margin: 1rem auto;
   @media (max-width: 1268px) {
-    width: 80%;
+    width: 75vw;
   }
   @media (max-width: 720px) {
     width: 85%;
   }
   @media (max-width: 600px) {
-    width: 90%;
+    width: 100vw;
   }
 
 
@@ -49,16 +53,16 @@ export const PlayWrap = styled.div`
 `;
 
 export const NoteGrid = styled.div`
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  
-
 `;
 
 export const ControlWrap = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  width : 100%;
+  width : 50%;
+  justify-content: center;
+  margin: 1rem auto;
+  max-width: 50%;
 `;
 
 export const TenoriBody = styled.div`
