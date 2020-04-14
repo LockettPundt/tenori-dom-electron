@@ -1,6 +1,18 @@
 /* eslint-disable max-len */
 import React from 'react';
+import styled from 'styled-components';
 import SingleNote from './SingleNote';
+
+const Row = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  /* background-color: black; */
+  justify-content: space-between;
+  align-content: center;
+  margin: 0.25rem auto;
+  padding: 0.1rem;
+`;
 
 
 const NoteRow = (props) => {
@@ -17,9 +29,9 @@ const NoteRow = (props) => {
     />
   ));
   return (
-    <div>
+    <Row>
       { notes }
-    </div>
+    </Row>
 
 
   );
