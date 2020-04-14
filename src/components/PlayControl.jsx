@@ -27,7 +27,7 @@ const PlayControl = () => {
 
   return (
     <ControlDiv>
-      <PlayButton type="submit" onClick={(e) => playHandler(e)}>{value.play ? <PlayIcon className="fas fa-play" /> : <i className="fas fa-pause" />}</PlayButton>
+      <PlayButton type="submit" onClick={(e) => playHandler(e)}>{value.play ? <i className="fas fa-pause" /> : <PlayIcon className="fas fa-play" />}</PlayButton>
       <PlayButton type="submit" onClick={(e) => stop(e)}><StopIcon className="fas fa-stop" /></PlayButton>
     </ControlDiv>
   );
