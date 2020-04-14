@@ -7,19 +7,37 @@ import StateContext from '../context';
 
 
 const ButtonOn = styled.button`
-  background-color: green;
-  width: 20px;
-  height: 20px;
+  align-content: center;
+  justify-content: center;
+  border: none;
   color: white;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const ButtonOff = styled.button`
-  background-color: red;
-  width: 20px;
-  height: 20px;
+  border: none;
   color: white;
+  &:focus {
+    outline: none;
+  }
 `;
 
+const PlayCircle = styled.i`
+  color: rgb(125, 187, 145);
+  font-size: 1.2rem;
+  
+`;
+const StopCircle = styled.i`
+  color: rgb(255,69,0);
+  font-size: 1.2rem;
+  &:focus {
+    border: none;
+  }
+
+
+`;
 
 const SingleNote = ({
   id, note, freq,
@@ -72,10 +90,10 @@ const SingleNote = ({
       status,
     });
   };
-  const on = <ButtonOn type="submit" value="on" onClick={(e) => clickHandler(e)} />;
+  const on = <ButtonOn type="submit" value="on" onClick={(e) => clickHandler(e)}><PlayCircle className="fas fa-circle" /></ButtonOn>;
 
   const off = (
-    <ButtonOff type="submit" value="off" onClick={(e) => clickHandler(e)} />
+    <ButtonOff type="submit" value="off" onClick={(e) => clickHandler(e)}><StopCircle className="fas fa-circle" /></ButtonOff>
   );
 
   const button = status ? on : off;
