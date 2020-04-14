@@ -2,42 +2,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from 'react';
-import styled from 'styled-components';
 import StateContext from '../context';
+import {
+  StopCircle, PlayCircle, ButtonOn, ButtonOff,
+} from '../styles/Buttons';
 
-
-const ButtonOn = styled.button`
-  align-content: center;
-  justify-content: center;
-  border: none;
-  color: white;
-  &:focus {
-    outline: none;
-  }
-`;
-
-const ButtonOff = styled.button`
-  border: none;
-  color: white;
-  &:focus {
-    outline: none;
-  }
-`;
-
-const PlayCircle = styled.i`
-  color: rgb(125, 187, 145);
-  font-size: 1.2rem;
-  
-`;
-const StopCircle = styled.i`
-  color: rgb(255,69,0);
-  font-size: 1.2rem;
-  &:focus {
-    border: none;
-  }
-
-
-`;
 
 const SingleNote = ({
   id, note, freq,
@@ -90,10 +59,16 @@ const SingleNote = ({
       status,
     });
   };
-  const on = <ButtonOn type="submit" value="on" onClick={(e) => clickHandler(e)}><PlayCircle className="fas fa-circle" /></ButtonOn>;
+  const on = (
+    <ButtonOn className="note" type="submit" value="on" onClick={(e) => clickHandler(e)}>
+      <PlayCircle className="fas fa-circle" currentStep={value.currentStep} step={id} play={value.play} />
+    </ButtonOn>
+  );
 
   const off = (
-    <ButtonOff type="submit" value="off" onClick={(e) => clickHandler(e)}><StopCircle className="fas fa-circle" /></ButtonOff>
+    <ButtonOff className="note" currentStep={value.currentStep} step={id} play={value.play} type="submit" value="off" onClick={(e) => clickHandler(e)}>
+      <StopCircle className="fas fa-circle" currentStep={value.currentStep} step={id} play={value.play} />
+    </ButtonOff>
   );
 
   const button = status ? on : off;
