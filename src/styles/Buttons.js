@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 
 
-export const ControlButton = styled.button`
+export const ControlButton = styled.a`
   border: none;
   background-color: none;
   font-size: 1rem;
   transition: ease-in-out, color 0.3s ease-in-out;
   &:hover {
-    font-size: 1.5rem;
     color: rgb(255,69,0);
-    outline: none;
+    
+  }
+  &:focus {
+    /* outline: none; */
   }
 
 `;
@@ -43,8 +45,8 @@ export const Icon = styled.i`
 export const ButtonOn = styled.button`
   border: none;
   color: white;
-  /* width: 1.3rem;
-  height: 1.3rem; */
+  width: 100%;
+  height: auto;
   &:focus {
     outline: none;
   }
@@ -53,8 +55,8 @@ export const ButtonOn = styled.button`
 export const ButtonOff = styled.button`
   border: none;
   color: white;
-  /* width: 1.3rem;
-  height: 1.3rem; */
+  width: 100%;
+  height: auto;
   &:focus {
     outline: none;
   }

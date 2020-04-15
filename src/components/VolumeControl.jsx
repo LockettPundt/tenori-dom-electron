@@ -15,9 +15,9 @@ const VolumeControl = () => {
   };
   return (
     <ControlDiv>
-      <ControlButton type="submit" onClick={(e) => volumeHandler(e, -0.1)}><i className="fas fa-minus" /></ControlButton>
+      <ControlButton className="btn" onClick={(e) => volumeHandler(e, -0.1)}><i className="fas fa-minus" /></ControlButton>
       <Icon className="fas fa-volume-up" />
-      <ControlButton type="submit" onClick={(e) => volumeHandler(e, 0.1)}><i className="fas fa-plus" /></ControlButton>
+      <ControlButton className="btn" onClick={(e) => volumeHandler(e, 0.1)}><i className="fas fa-plus" /></ControlButton>
     </ControlDiv>
   );
 };

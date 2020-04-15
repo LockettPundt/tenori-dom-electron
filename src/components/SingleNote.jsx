@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import StateContext from '../context';
 import {
   StopCircle, PlayCircle, ButtonOn, ButtonOff,
@@ -78,6 +78,12 @@ const SingleNote = ({
       { button }
     </>
   );
+};
+
+SingleNote.propTypes = {
+  id: PropTypes.number.isRequired,
+  note: PropTypes.string.isRequired,
+  freq: PropTypes.number.isRequired,
 };
 
 
