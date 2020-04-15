@@ -21,7 +21,7 @@ const SingleNote = ({
   ];
   const [status, setStatus] = useState(value[note][id].status);
   useEffect(() => {
-    const oscPlay = async () => {
+    const oscPlay = () => {
       const audioContext = new AudioContext();
       const oscillator = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
