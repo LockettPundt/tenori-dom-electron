@@ -20,7 +20,7 @@ export const NoteButton = styled.button`
 
 `;
 
-export const PlayButton = styled.button`
+export const PlayButton = styled.a`
   border: none;
   background-color: none;
   font-size: 1.8rem;
