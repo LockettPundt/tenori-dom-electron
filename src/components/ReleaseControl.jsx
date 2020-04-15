@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import StateContext from '../context';
-import { ControlButton, cIon, Icon } from '../styles/Buttons';
+import { ControlButton, Icon } from '../styles/Buttons';
 import { ControlDiv } from '../styles/ControlDivs';
 
 const ReleaseControl = () => {
@@ -16,9 +16,9 @@ const ReleaseControl = () => {
 
   return (
     <ControlDiv>
-      <ControlButton type="submit" onClick={(e) => releaseHandler(e, -0.1)}><i className="fas fa-minus" /></ControlButton>
+      <ControlButton classname="btn" onClick={(e) => releaseHandler(e, -0.1)}><i className="fas fa-minus" /></ControlButton>
       <Icon className="fas fa-ruler" />
-      <ControlButton type="submit" onClick={(e) => releaseHandler(e, 0.1)}><i className="fas fa-plus" /></ControlButton>
+      <ControlButton className="btn" onClick={(e) => releaseHandler(e, 0.1)}><i className="fas fa-plus" /></ControlButton>
     </ControlDiv>
   );
 };

@@ -6,23 +6,19 @@ import { ControlDiv } from '../styles/ControlDivs';
 const OctaveControls = () => {
   const [value, dispatch] = useContext(StateContext);
 
-  const octaveHandler = (e, num) => {
+  const octaveHandler = (e, action, num) => {
     e.preventDefault();
     dispatch({
-      type: e.target.value,
+      type: action,
       octave: value.octave + num === 0 ? 1 : value.octave + num,
     });
   };
 
   return (
     <ControlDiv>
-
-
-      <ControlButton type="submit" value="ACTION_OCTAVE_DOWN" onClick={(e) => octaveHandler(e, -1)}><i className="fas fa-minus" /></ControlButton>
+      <ControlButton className="btn" onClick={(e) => octaveHandler(e, 'ACTION_OCTAVE_DOWN', -1)}><i className="fas fa-minus" /></ControlButton>
       <Icon className="fas fa-music" />
-      <ControlButton type="submit" value="ACTION_OCTAVE_UP" onClick={(e) => octaveHandler(e, 1)}><i className="fas fa-plus" /></ControlButton>
-
-
+      <ControlButton className="btn" onClick={(e) => octaveHandler(e, 'ACTION_OCTAVE_UP', 1)}><i className="fas fa-plus" /></ControlButton>
     </ControlDiv>
   );
 };
