@@ -21,14 +21,14 @@ const PlayControl = () => {
     dispatch({
       type: 'ACTION_STOP',
       currentStep: 1,
-      play: !value.play,
+      play: value.play ? !value.play : value.play,
     });
   };
 
   return (
     <PlayDiv>
-      <PlayButton type="submit" onClick={(e) => playHandler(e)}>{value.play ? <i className="fas fa-pause" /> : <PlayIcon className="fas fa-play" />}</PlayButton>
-      <PlayButton type="submit" onClick={(e) => stop(e)}><StopIcon className="fas fa-stop" /></PlayButton>
+      <PlayButton onClick={(e) => playHandler(e)}>{value.play ? <i className="fas fa-pause" /> : <PlayIcon className="fas fa-play" />}</PlayButton>
+      <PlayButton onClick={(e) => stop(e)}><StopIcon className="fas fa-stop" /></PlayButton>
     </PlayDiv>
   );
 };
