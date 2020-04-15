@@ -12,12 +12,12 @@ import Timer from './components/Timer';
 import NoteRow from './components/NoteRow';
 import Reducer from './reducers/Reducer';
 import {
-  AppWrap, PlayWrap, Title, ControlWrap, TenoriBody, TestDiv,
+  AppWrap, PlayWrap, Title, ControlWrap, TenoriBody,
 } from './styles/App';
 
 const App = () => (
 
-  <StateProvider value={useReducer(Reducer, initialState)}>
+  <StateProvider className="provider" value={useReducer(Reducer, initialState)}>
     <AppWrap>
       <PlayWrap>
         <Title className="title">TENORI-DOM</Title>
