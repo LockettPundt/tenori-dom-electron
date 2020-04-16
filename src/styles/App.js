@@ -30,12 +30,12 @@ export const AppWrap = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-family: "Apercu Pro";
   font-size: 3vw;
 `;
 
 
 export const PlayWrap = styled.div`
+  font-family: 'apercuregular', 'Helvetica Neue';
   display: flex;
   width: 100%;
   padding: 0 2rem;
