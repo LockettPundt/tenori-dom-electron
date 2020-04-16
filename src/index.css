@@ -11,14 +11,22 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
+  @font-face {
+    font-family: 'apercuregular';
+    src: url('apercu_regular-webfont.woff2') format('woff2'),
+          url('apercu_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 
 body {
+  
 
   margin: 0;
   
   color: rgb(38, 38, 39);
-  font-family: -apple-system, BlinkMacSystemFont, "Apercu Pro", 'Helvetica Neue', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +41,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Apercu Pro", 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas,'georgia','Helvetica Neue',
     monospace;
 }
 
