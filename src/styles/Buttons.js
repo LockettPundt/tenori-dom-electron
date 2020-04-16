@@ -45,6 +45,7 @@ export const Icon = styled.i`
 export const ButtonOn = styled.button`
   border: none;
   color: white;
+  background-color: white;
   width: 100%;
   height: auto;
   &:focus {
@@ -55,6 +56,7 @@ export const ButtonOn = styled.button`
 export const ButtonOff = styled.button`
   border: none;
   color: white;
+  background-color: white;
   width: 100%;
   height: auto;
   &:focus {
@@ -65,6 +67,7 @@ export const ButtonOff = styled.button`
 export const PlayCircle = styled.i`
   width: 100%;
   height: auto;
+  background-color: white;
   color: rgb(125, 187, 145);
   color: ${(props) => (props.step === props.currentStep && props.play ? 'rgb(38, 38, 39)' : 'rgb(125, 187, 145)')};
   font-size: 1.2rem;
@@ -73,6 +76,7 @@ export const PlayCircle = styled.i`
 export const StopCircle = styled.i`
   width: 100%;
   height: auto;
+  background-color: white;
   color: rgb(255,69,0);
   font-size: 1.2rem;
   color: ${(props) => (props.step === props.currentStep && props.play ? 'rgb(125, 187, 145)' : 'rgb(255,69,0)')};
