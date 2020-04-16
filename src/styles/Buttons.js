@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const ControlButton = styled.a`
   border: none;
   background-color: none;
+  cursor: pointer;
   font-size: 1rem;
   transition: ease-in-out, color 0.3s ease-in-out;
   &:hover {
@@ -23,6 +24,7 @@ export const NoteButton = styled.button`
 export const PlayButton = styled.a`
   border: none;
   background-color: none;
+  cursor: pointer;
   font-size: 1.8rem;
   padding: 0 0.7rem;
   &:focus {
@@ -46,6 +48,7 @@ export const ButtonOn = styled.button`
   border: none;
   color: white;
   background-color: white;
+  cursor: pointer;
   width: 100%;
   height: auto;
   &:focus {
@@ -57,6 +60,7 @@ export const ButtonOff = styled.button`
   border: none;
   color: white;
   background-color: white;
+  cursor: pointer;
   width: 100%;
   height: auto;
   &:focus {

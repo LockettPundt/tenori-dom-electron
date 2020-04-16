@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ControlDiv = styled.section`
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 2.9rem;
   margin: 0rem auto;
 `;
 
