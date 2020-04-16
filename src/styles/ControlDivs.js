@@ -18,6 +18,7 @@ export const Row = styled.div`
   display: flex;
   position: relative;
   width: 100%;
+  background-color: white;
   align-content: center;
   margin: 0.25rem auto;
   padding: 0.1rem;
