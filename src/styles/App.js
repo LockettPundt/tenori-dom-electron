@@ -52,6 +52,9 @@ export const PlayWrap = styled.div`
     flex-direction: row-reverse;
     /* padding: 0 2rem; */
   }
+  @media (max-width: 1024px) {
+    padding: 0 1rem;
+  }
   
 `;
 
