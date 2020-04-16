@@ -10,7 +10,7 @@ export const AppWrap = styled.div`
   border-radius: 0.2rem;
   /* padding: 0.1rem 1rem 1rem 1rem; */
   height: auto;
-  margin: 2rem auto;
+  margin: 4rem auto;
   @media (max-width: 1268px) {
     width: 65vw;
   }
@@ -38,11 +38,11 @@ export const Title = styled.h1`
 export const PlayWrap = styled.div`
   display: flex;
   width: 100%;
-  
+  padding: 0 2rem;
   .title  {
     align-self: flex-end;
     width: 50%;
-    padding: 0 1.5rem;
+    /* padding: 0 2rem; */
   }
   .timerAndPlay {
     display: flex;
@@ -50,7 +50,7 @@ export const PlayWrap = styled.div`
     align-items: baseline;
     text-align: center;
     flex-direction: row-reverse;
-    padding: 0 1rem;
+    /* padding: 0 2rem; */
   }
   
 `;
