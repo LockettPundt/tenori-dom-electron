@@ -22,7 +22,7 @@ const SingleNote = ({
   const [status, setStatus] = useState(value[note][id].status);
   useEffect(() => {
     const oscPlay = () => {
-      const audioContext = new AudioContext();
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
       const oscillator = audioContext.createOscillator();
       const gainNode = audioContext.createGain();
       const compressor = audioContext.createDynamicsCompressor();
