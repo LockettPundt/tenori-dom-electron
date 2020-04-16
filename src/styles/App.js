@@ -10,7 +10,7 @@ export const AppWrap = styled.div`
   border-radius: 0.2rem;
   /* padding: 0.1rem 1rem 1rem 1rem; */
   height: auto;
-  margin: 4rem auto;
+  margin: 3rem auto;
   @media (max-width: 1268px) {
     width: 65vw;
   }
@@ -67,8 +67,8 @@ export const NoteGrid = styled.div`
 export const ControlWrap = styled.section`
   display: flex;
   width: 100%;
-  padding: 0 1rem;
-  margin: 1.3rem auto;
+  padding: 1rem 1rem;
+  margin: 1rem auto;
 `;
 
 export const TenoriBody = styled.div`
