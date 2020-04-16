@@ -5,7 +5,7 @@ export const ControlButton = styled.a`
   border: none;
   background-color: none;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.2rem;
   transition: ease-in-out, color 0.3s ease-in-out;
   &:hover {
     color: rgb(255,69,0);
