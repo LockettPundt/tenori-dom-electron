@@ -22,10 +22,7 @@ html {
 
 
 body {
-  
-
   margin: 0;
-  
   color: rgb(38, 38, 39);
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -37,8 +34,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
-
 }
 
 code {

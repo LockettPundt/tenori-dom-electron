@@ -4,6 +4,8 @@ import {
   PlayIcon, StopIcon, PlayButton,
 } from '../styles/Buttons';
 import { PlayDiv } from '../styles/ControlDivs';
+import InstructionsModal from './InstructionsModal';
+
 
 const PlayControl = () => {
   const [value, dispatch] = useContext(StateContext);
@@ -27,6 +29,7 @@ const PlayControl = () => {
 
   return (
     <PlayDiv>
+      {value.modal ? <InstructionsModal /> : ''}
       <PlayButton onClick={(e) => playHandler(e)}>{value.play ? <i className="fas fa-pause" /> : <PlayIcon className="fas fa-play" />}</PlayButton>
       <PlayButton onClick={(e) => stop(e)}><StopIcon className="fas fa-stop" /></PlayButton>
     </PlayDiv>

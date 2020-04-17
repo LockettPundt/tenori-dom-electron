@@ -4,6 +4,7 @@ const initialState = {
   currentStep: 1,
   tempo: 0.8,
   release: 1.5,
+  modal: true,
   octave: 4,
   volume: 0.3,
   wave: 0,

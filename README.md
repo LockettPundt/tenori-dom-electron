@@ -10,6 +10,12 @@ TENORI-DOM
 
 A Tenori-On inspired musical instrument created with React. The instrument is broken down 
 into a 16x16 grid of notes. Each row contains a single note and each column contains every note. Yo can add notes by clicking on the circles and they will turn green once activated. You can alter the sound of of the instrument by adjusting the wave form, octave, release, tempo and volume with the corresponding control. Enjoy!
+  
+=====
+[tenori-dom.com](https://tenori-dom.com)
+=====
+
+Currently best on Chrome/IE and Desktop. More mobile friendly designs coming soon.
 
 ![DEMO IMAGE](./public/tenoriDOM.png)
 
