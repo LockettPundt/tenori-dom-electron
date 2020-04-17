@@ -1,8 +1,13 @@
 const Reducer = (state, action) => {
   const {
-    status, id, play, currentStep, octave, wave, tempo, volume, release,
+    status, id, play, currentStep, octave, wave, tempo, volume, release, modal,
   } = action;
   switch (action.type) {
+    case 'ACTION_CLOSE_MODAL':
+      return {
+        ...state,
+        modal,
+      };
     case 'ACTION_CHANGE_RELEASE':
       return {
         ...state,
