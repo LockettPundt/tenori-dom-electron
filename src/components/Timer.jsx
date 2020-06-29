@@ -18,7 +18,7 @@ const Timer = () => {
       }
     }, tempo * 1000);
     return () => clearInterval(timer);
-  }, [value.play]); // maybe the second argument is currentStep.
+  }, [value.play, value.currentStep]);
 
 
   return (
