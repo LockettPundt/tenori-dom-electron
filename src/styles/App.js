@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const AppWrap = styled.div`
-  width: 70vw;
+  width: 90vw;
   opacity: 0.96; /* not certain on this but it's kinda neat */
   background-color: white;
   display: flex;
@@ -10,27 +10,12 @@ export const AppWrap = styled.div`
   border-radius: 0.2rem;
   /* padding: 0.1rem 1rem 1rem 1rem; */
   height: auto;
-  margin: 3rem auto;
-  @media (max-width: 1268px) {
-    width: 65vw;
-  }
-  @media (max-width: 850px) {
-    width: 83vw;
-  }
-  @media (max-width: 675px) {
-    width: 90vw;
-  }
-  @media (max-width: 625px) {
-    width: 100vw;
-  }
-  @media (max-width: 560px) {
-    
-  }
-
+  margin: 2.3rem auto;
 `;
 
 export const Title = styled.h1`
   font-size: 3vw;
+  width: 25px;
 `;
 
 
@@ -39,6 +24,7 @@ export const PlayWrap = styled.div`
   display: flex;
   width: 100%;
   padding: 0 2rem;
+  
   .title  {
     align-self: flex-end;
     width: 50%;
