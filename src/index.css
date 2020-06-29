@@ -30,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('../src/img/compBook.png');
-  
+  overflow-y: hidden;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
